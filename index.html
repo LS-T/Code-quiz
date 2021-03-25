@@ -4,27 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Code Quiz</title>
 </head>
 <body>
-    <header>
-        <h1>View Highscores</h1>
-        <h2>Time:<span id="timeLeft">0</span> </h2>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="highscores.html">View Highscores</a>
+          <h2 class="position-rel">Time:<span id="timeLeft">0</span> </h2>
+        </div>
+      </nav>
     <br>
     <main>
-        <div class="container" >
-            <h2 >Coding Quiz</h2>
-            <p>This is a general coding quiz. Test your knowledge within the time limit.</p>
-            <br>
-            <p>Incorrect answers will penalize your score/time by 10 seconds.</p>
-            <button id="start">Start Quiz</button>
+        <!-- Start screen -->
+        <section id="start-screen" class="show">
+           
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Coding Quiz Challenge</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>This is a general coding quiz. Test your knowledge within the time limit.
+                        Incorrect answers will penalize your score/time by 10 seconds.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="start">Start Quiz</button>
+                </div>
+            </div>
+           
+           
+        </section>
+        <!-- Hidden quiz section -->
+
+        <section id="questionCard" class="hide">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 questions">
+                    <h3 id="question-title"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="choices"></div>
+                <div id="feedback" class="hide"></div>
+            </div>
             
-        </div>
+        </section>
+        
+        
+        <!-- Hidden high-score-section -->
+        <section id="highscore-section" class="hide">
+            <div class="row">
+                <div id="high-score" class="col-md-12">
+                    <h2>All done!</h2>
+                    <h3>Your final score is <span id="final-score">0</span></h3>
+                    <label for="initials-area">Enter initials:</label>
+                    <input type="text" name="initials-area" maxlength="4" id="initials">
+                    <button id="submit-button" type="submit">Submit</button>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
+    
 </body>
 </html>
